@@ -1,0 +1,29 @@
+<div class="abri-modal animacion fadeIn" *ngIf="modal.modal" >
+    <div class="modal" tabindex="-1" style="display: block;">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" *ngIf="color">Color de {{ color.name }}</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cerrarModal()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg">
+                            <ul class="list-group" *ngIf="color">
+                                <li class="list-group-item">{{color.name}}</li>
+                                <li class="list-group-item">{{color.color}}</li>
+                                <li class="list-group-item">{{color.pantone}}</li>
+                                <li class="list-group-item">{{color.year}}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="cerrarModal()">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 

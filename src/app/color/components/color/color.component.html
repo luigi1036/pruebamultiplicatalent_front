@@ -1,0 +1,33 @@
+<div class="container " *ngIf="colores.length != 0 else noColores">
+    <div class="card border-primary  mt-3">
+        <div class="card-header text-primary text-center">Tabla de Colores</div>
+    </div>
+    <div class="row mt-2"  >
+        <div class="col-lg-4 col-md-6" *ngFor="let color of colores">
+            <div class="card mt-2">
+                <div class="card-body " >
+                    <h5 class="card-title ">{{color.year}}</h5>
+                    <p class="card-text text-center">{{color.name}}</p>
+                    <p class="card-text text-center">{{color.color}}</p>
+                    <p class="card-text text-end">{{color.pantone}}</p>
+                </div>
+                <div class="row ">
+                  <div class="d-flex justify-content-center">
+                  <button class="btn btn-success btn-rounded m-1" role="button" (click)="verColor(color)">Ver</button>
+                  <button class="btn btn-primary btn-rounded m-1" role="button" [routerLink]="['/formulario', color.id]">Editar</button>
+                  <button class="btn btn-danger btn-rounded  m-1" role="button" (click)="delete(color)">Eliminar</button>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #noColores>
+    <div class="container mt-3">
+        <div class="alert alert-danger text-center" role="alert">
+           No hay Colores para mostrar
+        </div>
+    </div>
+</ng-template>
